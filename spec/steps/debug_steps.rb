@@ -1,3 +1,5 @@
+# coding: utf-8
+
 step 'デバッグ' do
   binding.pry
 end

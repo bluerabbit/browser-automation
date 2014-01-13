@@ -1,3 +1,5 @@
+# coding: utf-8
+
 steps_for :yahoo do
   step 'yahooにアクセスします' do
     Capybara.app_host = 'http://www.yahoo.co.jp'
