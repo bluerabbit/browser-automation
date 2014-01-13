@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
+#ruby '2.0.0'
 gem 'rake', '0.9.2'
 gem 'activesupport', '3.2.12'
 
