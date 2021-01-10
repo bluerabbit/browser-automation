@@ -1,27 +1,20 @@
-# coding: utf-8
-
 steps_for :yahoo do
   step 'yahooにアクセスします' do
-    Capybara.app_host = 'http://www.yahoo.co.jp'
+    Capybara.app_host = 'https://www.yahoo.co.jp'
   end
 
   step 'yahooトップ画面を表示' do
     visit '/'
-    page.current_url.should == 'http://www.yahoo.co.jp/'
-  end
 
-  step 'ヤフオク!をクリック' do
-    within('#yahooservice') { click_on 'ヤフオク!' }
-    sleep 2
-    page.current_url.should == 'http://auctions.yahoo.co.jp/'
+    expect(current_url).to eq('https://www.yahoo.co.jp/')
   end
 
   step 'テキストボックスに:keywordを入力' do |keyword|
-    fill_in 'AucSearchTxt', with: keyword
+    fill_in 'p', with: keyword
   end
 
   step '検索する' do
-    click_on 'AucSearchSbmt'
+    click_on '検索'
     sleep 2
   end
 end
